@@ -21,7 +21,13 @@ namespace excel_reader.Controller
                 {
                     using (var reader = ExcelReaderFactory.CreateReader(stream))
                     {
-                        DataSet dsWorksheet = reader.AsDataSet();
+                        DataSet dsWorksheet = reader.AsDataSet(new ExcelDataSetConfiguration()
+                        {
+                            ConfigureDataTable = (_) => new ExcelDataTableConfiguration()
+                            {
+                                UseHeaderRow = true
+                            }
+                        });
                         IEnumerable<DataTable> tables = dsWorksheet.Tables.Cast<DataTable>();
                         return tables;
                     }
