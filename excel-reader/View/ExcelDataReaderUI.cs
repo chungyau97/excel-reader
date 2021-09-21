@@ -13,6 +13,7 @@ namespace excel_reader
 {
     public partial class ExcelDataReaderUI : Form
     {
+        List<DataTable> listDt;
         public ExcelDataReaderUI()
         {
             InitializeComponent();
@@ -22,7 +23,7 @@ namespace excel_reader
             try
             {
                 string filePath = setPathName();
-                setDataGridView(filePath);
+                PopulateComboBox(filePath);
             }
             catch(Exception ex)
             {
@@ -44,21 +45,34 @@ namespace excel_reader
                 throw ex;
             }
         }
-        private void setDataGridView(string filePath)
+        private void PopulateComboBox(string filePath)
         {
             try
             {
-                ExcelDataReaderCtrl edrc = new ExcelDataReaderCtrl();
+                ExcelDataReaderCtrl edrc = new ExcelDataReaderCtrl(); 
                 IEnumerable<DataTable> tables = edrc.ExcelFileReader(filePath);
-                foreach(DataTable table in tables)
+                listDt = tables.ToList();
+                int numWorkSheets = tables.Count();
+                for(int i = 1; i <= numWorkSheets; i++)
                 {
-                    dgvExcelData.DataSource = table;
+                    cmbNumSheet.Items.Add(i);
                 }
+                cmbNumSheet.SelectedIndex = 0;
+                PopulateDataGridView();
             }
             catch(Exception ex)
             {
                 throw ex;
             }
+        }
+        private void PopulateDataGridView(int i = 0)
+        {
+            dgvExcelData.DataSource = listDt[i];
+        }
+
+        private void cmbNumSheet_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            PopulateDataGridView(cmbNumSheet.SelectedIndex);
         }
     }
 }

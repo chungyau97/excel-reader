@@ -32,17 +32,20 @@ namespace excel_reader
             this.dgvExcelData = new System.Windows.Forms.DataGridView();
             this.btnFilePath = new System.Windows.Forms.Button();
             this.txtFilePath = new System.Windows.Forms.TextBox();
+            this.cmbNumSheet = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExcelData)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvExcelData
             // 
+            this.dgvExcelData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvExcelData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvExcelData.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvExcelData.Location = new System.Drawing.Point(0, 38);
+            this.dgvExcelData.Location = new System.Drawing.Point(0, 64);
             this.dgvExcelData.Name = "dgvExcelData";
             this.dgvExcelData.RowTemplate.Height = 25;
-            this.dgvExcelData.Size = new System.Drawing.Size(800, 412);
+            this.dgvExcelData.Size = new System.Drawing.Size(800, 386);
             this.dgvExcelData.TabIndex = 0;
             // 
             // btnFilePath
@@ -57,17 +60,29 @@ namespace excel_reader
             // 
             // txtFilePath
             // 
+            this.txtFilePath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtFilePath.Location = new System.Drawing.Point(93, 9);
             this.txtFilePath.Name = "txtFilePath";
             this.txtFilePath.ReadOnly = true;
             this.txtFilePath.Size = new System.Drawing.Size(695, 23);
             this.txtFilePath.TabIndex = 2;
             // 
+            // cmbNumSheet
+            // 
+            this.cmbNumSheet.FormattingEnabled = true;
+            this.cmbNumSheet.Location = new System.Drawing.Point(727, 38);
+            this.cmbNumSheet.Name = "cmbNumSheet";
+            this.cmbNumSheet.Size = new System.Drawing.Size(61, 23);
+            this.cmbNumSheet.TabIndex = 3;
+            this.cmbNumSheet.SelectedIndexChanged += new System.EventHandler(this.cmbNumSheet_SelectedIndexChanged);
+            // 
             // ExcelDataReaderUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cmbNumSheet);
             this.Controls.Add(this.txtFilePath);
             this.Controls.Add(this.btnFilePath);
             this.Controls.Add(this.dgvExcelData);
@@ -85,6 +100,7 @@ namespace excel_reader
         private System.Windows.Forms.DataGridView dgvExcelData;
         private System.Windows.Forms.Button btnFilePath;
         private System.Windows.Forms.TextBox txtFilePath;
+        private System.Windows.Forms.ComboBox cmbNumSheet;
     }
 }
 

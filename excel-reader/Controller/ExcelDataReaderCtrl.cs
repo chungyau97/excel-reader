@@ -26,8 +26,6 @@ namespace excel_reader.Controller
                         return tables;
                     }
                 }
-                //FileStream stream = File.Open(filePath, FileMode.Open, FileAccess.Read);
-                //IExcelDataReader reader = ExcelReaderFactory.CreateReader(stream);
             }
             catch (Exception ex)
             {
