@@ -29,21 +29,21 @@ namespace excel_reader
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvExcelData = new System.Windows.Forms.DataGridView();
             this.btnFilePath = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.txtFilePath = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvExcelData)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvExcelData
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 38);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(800, 412);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvExcelData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvExcelData.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvExcelData.Location = new System.Drawing.Point(0, 38);
+            this.dgvExcelData.Name = "dgvExcelData";
+            this.dgvExcelData.RowTemplate.Height = 25;
+            this.dgvExcelData.Size = new System.Drawing.Size(800, 412);
+            this.dgvExcelData.TabIndex = 0;
             // 
             // btnFilePath
             // 
@@ -55,26 +55,26 @@ namespace excel_reader
             this.btnFilePath.UseVisualStyleBackColor = true;
             this.btnFilePath.Click += new System.EventHandler(this.btnFilePath_Click);
             // 
-            // label1
+            // txtFilePath
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(93, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 15);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "label1";
+            this.txtFilePath.Location = new System.Drawing.Point(93, 9);
+            this.txtFilePath.Name = "txtFilePath";
+            this.txtFilePath.ReadOnly = true;
+            this.txtFilePath.Size = new System.Drawing.Size(695, 23);
+            this.txtFilePath.TabIndex = 2;
             // 
             // ExcelDataReaderUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtFilePath);
             this.Controls.Add(this.btnFilePath);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvExcelData);
+            this.MinimumSize = new System.Drawing.Size(816, 489);
             this.Name = "ExcelDataReaderUI";
-            this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Text = "Excel Data Reader";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvExcelData)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -82,9 +82,9 @@ namespace excel_reader
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvExcelData;
         private System.Windows.Forms.Button btnFilePath;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtFilePath;
     }
 }
 

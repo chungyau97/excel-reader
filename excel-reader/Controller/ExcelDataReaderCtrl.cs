@@ -1,5 +1,7 @@
-﻿using System;
+﻿using ExcelDataReader;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -9,21 +11,28 @@ namespace excel_reader.Controller
 {
     public class ExcelDataReaderCtrl
     {
-        string filePath = string.Empty;
-        string errorMsg = "Unable to open file.";
-        public string GetFilePath(string filePath)
+        public IEnumerable<DataTable> ExcelFileReader(string filePath)
         {
             try
             {
-                this.filePath = filePath;
-                return this.filePath;
+                System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
+                //open file and returns as Stream
+                using (var stream = File.Open(filePath, FileMode.Open, FileAccess.Read))
+                {
+                    using (var reader = ExcelReaderFactory.CreateReader(stream))
+                    {
+                        DataSet dsWorksheet = reader.AsDataSet();
+                        IEnumerable<DataTable> tables = dsWorksheet.Tables.Cast<DataTable>();
+                        return tables;
+                    }
+                }
+                //FileStream stream = File.Open(filePath, FileMode.Open, FileAccess.Read);
+                //IExcelDataReader reader = ExcelReaderFactory.CreateReader(stream);
             }
             catch (Exception ex)
             {
                 throw ex;
             }
         }
-
-        
     }
 }

@@ -17,20 +17,47 @@ namespace excel_reader
         {
             InitializeComponent();
         }
-
         private void btnFilePath_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string filePath = setPathName();
+                setDataGridView(filePath);
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.StackTrace);
+            }
+        }
+        private string setPathName()
         {
             try
             {
                 OpenFileDialog ofd = new OpenFileDialog();
                 ofd.ShowDialog();
                 string filePath = ofd.FileName.ToString();
-                ExcelDataReaderCtrl edrc = new ExcelDataReaderCtrl();
-                label1.Text =  edrc.GetFilePath(filePath);
+                txtFilePath.Text = filePath;
+                return filePath;
             }
             catch(Exception ex)
             {
-                Console.WriteLine(ex.StackTrace);
+                throw ex;
+            }
+        }
+        private void setDataGridView(string filePath)
+        {
+            try
+            {
+                ExcelDataReaderCtrl edrc = new ExcelDataReaderCtrl();
+                IEnumerable<DataTable> tables = edrc.ExcelFileReader(filePath);
+                foreach(DataTable table in tables)
+                {
+                    dgvExcelData.DataSource = table;
+                }
+            }
+            catch(Exception ex)
+            {
+                throw ex;
             }
         }
     }
