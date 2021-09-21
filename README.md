@@ -12,9 +12,20 @@ Screenshot of UI:
 * [ExcelDataReader](https://github.com/ExcelDataReader/ExcelDataReader)
 * [C#](https://en.wikipedia.org/wiki/C_Sharp_(programming_language))
 
+<!-- GETTING STARTED -->
+## Getting Started
+
+To get a local copy up and running follow these simple steps.
+
 ### Installation
 1. Clone the repo
    ```sh
    git clone https://github.com/chungyau97/excel-reader-1.git
    ```
 2. Build the project
+
+
+<!-- LICENSE -->
+## License
+
+Distributed under the MIT License. See [LICENSE](https://github.com/chungyau97/excel-reader-1/blob/main/LICENSE) for more information.
