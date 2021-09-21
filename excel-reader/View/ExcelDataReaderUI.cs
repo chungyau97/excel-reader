@@ -22,6 +22,7 @@ namespace excel_reader
         {
             try
             {
+                Reset();
                 string filePath = setPathName();
                 PopulateComboBox(filePath);
             }
@@ -67,12 +68,40 @@ namespace excel_reader
         }
         private void PopulateDataGridView(int i = 0)
         {
-            dgvExcelData.DataSource = listDt[i];
+            try
+            {
+                dgvExcelData.DataSource = listDt[i];
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         private void cmbNumSheet_SelectedIndexChanged(object sender, EventArgs e)
         {
-            PopulateDataGridView(cmbNumSheet.SelectedIndex);
+            try
+            {
+                PopulateDataGridView(cmbNumSheet.SelectedIndex);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private void Reset()
+        {
+            try
+            {
+                txtFilePath.Text = string.Empty;
+                cmbNumSheet.Items.Clear();
+                dgvExcelData.DataSource = null;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }
