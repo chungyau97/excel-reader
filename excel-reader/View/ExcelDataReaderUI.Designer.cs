@@ -29,6 +29,7 @@ namespace excel_reader
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExcelDataReaderUI));
             this.dgvExcelData = new System.Windows.Forms.DataGridView();
             this.btnFilePath = new System.Windows.Forms.Button();
             this.txtFilePath = new System.Windows.Forms.TextBox();
@@ -38,12 +39,18 @@ namespace excel_reader
             // 
             // dgvExcelData
             // 
+            this.dgvExcelData.AllowUserToAddRows = false;
+            this.dgvExcelData.AllowUserToDeleteRows = false;
+            this.dgvExcelData.AllowUserToOrderColumns = true;
             this.dgvExcelData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvExcelData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvExcelData.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvExcelData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvExcelData.Location = new System.Drawing.Point(0, 64);
             this.dgvExcelData.Name = "dgvExcelData";
+            this.dgvExcelData.ReadOnly = true;
             this.dgvExcelData.RowTemplate.Height = 25;
             this.dgvExcelData.Size = new System.Drawing.Size(800, 386);
             this.dgvExcelData.TabIndex = 0;
@@ -70,6 +77,7 @@ namespace excel_reader
             // 
             // cmbNumSheet
             // 
+            this.cmbNumSheet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbNumSheet.FormattingEnabled = true;
             this.cmbNumSheet.Location = new System.Drawing.Point(727, 38);
             this.cmbNumSheet.Name = "cmbNumSheet";
@@ -86,6 +94,7 @@ namespace excel_reader
             this.Controls.Add(this.txtFilePath);
             this.Controls.Add(this.btnFilePath);
             this.Controls.Add(this.dgvExcelData);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(816, 489);
             this.Name = "ExcelDataReaderUI";
             this.Text = "Excel Data Reader";
