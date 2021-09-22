@@ -18,6 +18,37 @@ namespace excel_reader
         {
             InitializeComponent();
         }
+        private void ButtonAvailability(bool value)
+        {
+            btnA.Enabled = value;
+            btnB.Enabled = value;
+        }
+        private void Reset()
+        {
+            try
+            {
+                txtFilePath.Text = string.Empty;
+                cmbNumSheet.Items.Clear();
+                dgvExcelData.DataSource = null;
+                ButtonAvailability(false);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        private void ExcelDataReaderUI_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                Reset();
+            }
+            catch(Exception ex)
+            {
+                Console.Clear();
+                Console.WriteLine(ex.StackTrace);
+            }
+        }
         private void btnFilePath_Click(object sender, EventArgs e)
         {
             try
@@ -25,9 +56,11 @@ namespace excel_reader
                 Reset();
                 string filePath = setPathName();
                 PopulateComboBox(filePath);
+                ButtonAvailability(true);
             }
             catch(Exception ex)
             {
+                Console.Clear();
                 Console.WriteLine(ex.StackTrace);
             }
         }
@@ -90,18 +123,15 @@ namespace excel_reader
             }
         }
 
-        private void Reset()
+
+        private void btnA_Click(object sender, EventArgs e)
         {
-            try
-            {
-                txtFilePath.Text = string.Empty;
-                cmbNumSheet.Items.Clear();
-                dgvExcelData.DataSource = null;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+
+        }
+
+        private void btnB_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -34,6 +34,10 @@ namespace excel_reader
             this.btnFilePath = new System.Windows.Forms.Button();
             this.txtFilePath = new System.Windows.Forms.TextBox();
             this.cmbNumSheet = new System.Windows.Forms.ComboBox();
+            this.btnA = new System.Windows.Forms.Button();
+            this.lblA = new System.Windows.Forms.Label();
+            this.btnB = new System.Windows.Forms.Button();
+            this.lblB = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExcelData)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,11 +89,53 @@ namespace excel_reader
             this.cmbNumSheet.TabIndex = 3;
             this.cmbNumSheet.SelectedIndexChanged += new System.EventHandler(this.cmbNumSheet_SelectedIndexChanged);
             // 
+            // btnA
+            // 
+            this.btnA.Location = new System.Drawing.Point(12, 38);
+            this.btnA.Name = "btnA";
+            this.btnA.Size = new System.Drawing.Size(75, 23);
+            this.btnA.TabIndex = 4;
+            this.btnA.Text = "A";
+            this.btnA.UseVisualStyleBackColor = true;
+            this.btnA.Click += new System.EventHandler(this.btnA_Click);
+            // 
+            // lblA
+            // 
+            this.lblA.AutoSize = true;
+            this.lblA.Location = new System.Drawing.Point(93, 42);
+            this.lblA.Name = "lblA";
+            this.lblA.Size = new System.Drawing.Size(49, 15);
+            this.lblA.TabIndex = 5;
+            this.lblA.Text = "00:00:00";
+            // 
+            // btnB
+            // 
+            this.btnB.Location = new System.Drawing.Point(148, 38);
+            this.btnB.Name = "btnB";
+            this.btnB.Size = new System.Drawing.Size(75, 23);
+            this.btnB.TabIndex = 6;
+            this.btnB.Text = "B";
+            this.btnB.UseVisualStyleBackColor = true;
+            this.btnB.Click += new System.EventHandler(this.btnB_Click);
+            // 
+            // lblB
+            // 
+            this.lblB.AutoSize = true;
+            this.lblB.Location = new System.Drawing.Point(229, 42);
+            this.lblB.Name = "lblB";
+            this.lblB.Size = new System.Drawing.Size(49, 15);
+            this.lblB.TabIndex = 7;
+            this.lblB.Text = "00:00:00";
+            // 
             // ExcelDataReaderUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblB);
+            this.Controls.Add(this.btnB);
+            this.Controls.Add(this.lblA);
+            this.Controls.Add(this.btnA);
             this.Controls.Add(this.cmbNumSheet);
             this.Controls.Add(this.txtFilePath);
             this.Controls.Add(this.btnFilePath);
@@ -98,6 +144,7 @@ namespace excel_reader
             this.MinimumSize = new System.Drawing.Size(816, 489);
             this.Name = "ExcelDataReaderUI";
             this.Text = "Excel Data Reader";
+            this.Load += new System.EventHandler(this.ExcelDataReaderUI_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvExcelData)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -110,6 +157,10 @@ namespace excel_reader
         private System.Windows.Forms.Button btnFilePath;
         private System.Windows.Forms.TextBox txtFilePath;
         private System.Windows.Forms.ComboBox cmbNumSheet;
+        private System.Windows.Forms.Button btnA;
+        private System.Windows.Forms.Label lblA;
+        private System.Windows.Forms.Button btnB;
+        private System.Windows.Forms.Label lblB;
     }
 }
 
