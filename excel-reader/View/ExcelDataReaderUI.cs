@@ -126,12 +126,32 @@ namespace excel_reader
 
         private void btnA_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                ExcelDataReaderCtrl edrc = new ExcelDataReaderCtrl();
+                lblA.Text = edrc.ChangeColumnName(listDt[cmbNumSheet.SelectedIndex], 'A');
+                PopulateDataGridView(cmbNumSheet.SelectedIndex);
+            }
+            catch (Exception ex)
+            {
+                Console.Clear();
+                Console.WriteLine(ex.StackTrace);
+            }
         }
 
         private void btnB_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                ExcelDataReaderCtrl edrc = new ExcelDataReaderCtrl();
+                lblB.Text = edrc.ChangeColumnName(listDt[cmbNumSheet.SelectedIndex], 'B');
+                PopulateDataGridView(cmbNumSheet.SelectedIndex);
+            }
+            catch (Exception ex)
+            {
+                Console.Clear();
+                Console.WriteLine(ex.StackTrace);
+            }
         }
     }
 }

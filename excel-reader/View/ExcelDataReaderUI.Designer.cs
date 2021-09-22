@@ -104,13 +104,13 @@ namespace excel_reader
             this.lblA.AutoSize = true;
             this.lblA.Location = new System.Drawing.Point(93, 42);
             this.lblA.Name = "lblA";
-            this.lblA.Size = new System.Drawing.Size(49, 15);
+            this.lblA.Size = new System.Drawing.Size(70, 15);
             this.lblA.TabIndex = 5;
-            this.lblA.Text = "00:00:00";
+            this.lblA.Text = "00:00:00.000";
             // 
             // btnB
             // 
-            this.btnB.Location = new System.Drawing.Point(148, 38);
+            this.btnB.Location = new System.Drawing.Point(169, 38);
             this.btnB.Name = "btnB";
             this.btnB.Size = new System.Drawing.Size(75, 23);
             this.btnB.TabIndex = 6;
@@ -121,11 +121,11 @@ namespace excel_reader
             // lblB
             // 
             this.lblB.AutoSize = true;
-            this.lblB.Location = new System.Drawing.Point(229, 42);
+            this.lblB.Location = new System.Drawing.Point(250, 42);
             this.lblB.Name = "lblB";
-            this.lblB.Size = new System.Drawing.Size(49, 15);
+            this.lblB.Size = new System.Drawing.Size(70, 15);
             this.lblB.TabIndex = 7;
-            this.lblB.Text = "00:00:00";
+            this.lblB.Text = "00:00:00.000";
             // 
             // ExcelDataReaderUI
             // 
