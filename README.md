@@ -11,6 +11,7 @@ Screenshot of UI:
 
 * [ExcelDataReader](https://github.com/ExcelDataReader/ExcelDataReader)
 * [C#](https://en.wikipedia.org/wiki/C_Sharp_(programming_language))
+* [Change Int to Alphabet String](https://github.com/chungyau97/int-to-alphabet)
 
 <!-- GETTING STARTED -->
 ## Getting Started
