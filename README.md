@@ -1,4 +1,4 @@
-# excel-reader-ExeclDataReader
+# excel-reader-ExcelDataReader
 
 ## About The Project
 C# window application that read excel files and turn into DatatTable.
