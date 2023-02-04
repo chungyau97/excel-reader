@@ -1,11 +1,11 @@
-# excel-reader-ExcelDataReader
+# excel-reader-function
 
 ## About The Project
 C# window application that read excel files and turn into DatatTable.
 
 Screenshot of UI:
 
-![UI Screenshot](https://github.com/chungyau97/excel-reader-1/blob/main/UI.png)
+![UI Screenshot](https://github.com/chungyau97/excel-reader-function/blob/main/UI.png)
 
 ### Built With
 
@@ -21,7 +21,7 @@ To get a local copy up and running follow these simple steps.
 ### Installation
 1. Clone the repo
    ```sh
-   git clone https://github.com/chungyau97/excel-reader-1.git
+   git clone https://github.com/chungyau97/excel-reader-function.git
    ```
 2. Build the project
 
@@ -29,4 +29,4 @@ To get a local copy up and running follow these simple steps.
 <!-- LICENSE -->
 ## License
 
-Distributed under the MIT License. See [LICENSE](https://github.com/chungyau97/excel-reader-1/blob/main/LICENSE) for more information.
+Distributed under the MIT License. See [LICENSE](https://github.com/chungyau97/excel-reader-function/blob/main/LICENSE) for more information.
